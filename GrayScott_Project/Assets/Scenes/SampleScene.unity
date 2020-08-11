@@ -410,7 +410,7 @@ MonoBehaviour:
   m_k: 0.06
   m_simulateSpeed: 1
   m_step: 5
-  m_gridSize: 0.015
+  m_gridSize: 0.01
   m_noiseTexture: {fileID: 2800000, guid: b42c50d556a9f864d9c1722643220a59, type: 3}
   m_Du: 0.00002
   m_Dv: 0.00001

@@ -3,4 +3,4 @@ Cmd: initializeCompiler
 Cmd: compileComputeKernel
   error: 1 plat 4 at GrayScottCalculator.compute(17): signed/unsigned mismatch, unsigned assumed
   error: 1 plat 4 at GrayScottCalculator.compute(18): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=1263 outsize=1362 ok=1
+  api=4 insize=1251 outsize=1374 ok=1
