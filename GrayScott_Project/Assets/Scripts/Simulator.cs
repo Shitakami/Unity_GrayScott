@@ -65,7 +65,7 @@ public class Simulator : MonoBehaviour
     }
 
 	void Update() {
-
+		
 		for(int i = 0; i < m_step; ++i)
 			UpdateGrayScott();
 
@@ -115,7 +115,6 @@ public class Simulator : MonoBehaviour
 		m_grayScottCalculator.SetFloat("dx", m_gridSize);
 		m_grayScottCalculator.SetFloat("Du", m_Du);
 		m_grayScottCalculator.SetFloat("Dv", m_Dv);
-		m_grayScottCalculator.SetInt("size", m_textureSize);
 
 		m_grayScottCalculator.SetTexture(m_updateGrayScottKernel, "Texture", m_uvTexture);
 		
