@@ -33,7 +33,6 @@ float Du;
 float Dv;
 float f;
 float k;
-int size;
 
 [numthreads(8, 8, 1)]
 void UpdateGrayScotte(uint3 id : SV_DispatchThreadID) {
