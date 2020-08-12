@@ -1,8 +1,2 @@
 Base path: 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data', plugins path 'C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: preprocessCompute
-  insize=1250 outsize=1251 ok=1
-Cmd: compileComputeKernel
-  error: 1 plat 4 at GrayScottCalculator.compute(17): signed/unsigned mismatch, unsigned assumed
-  error: 1 plat 4 at GrayScottCalculator.compute(18): signed/unsigned mismatch, unsigned assumed
-  api=4 insize=1251 outsize=839 ok=1
