@@ -51,7 +51,7 @@ void UpdateGrayScotte(uint3 id : SV_DispatchThreadID) {
 	float dudt = Du * laplacian.x - u * v * v + f * (1.0 - u);
 	float dvdt = Dv * laplacian.y + u * v * v - (f + k) * v;
 	
-	Texture[id.xy] = float2(u + dt * dudt, v + dvdt);
+	Texture[id.xy] = float2(u + dt * dudt, v + dt * dvdt);
 }
 
 
