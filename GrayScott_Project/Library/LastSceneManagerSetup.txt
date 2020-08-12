@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/GrayScott/Scenes/GrayScottSample.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
