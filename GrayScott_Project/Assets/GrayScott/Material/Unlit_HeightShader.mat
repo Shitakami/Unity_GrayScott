@@ -34,7 +34,7 @@ Material:
     - _NormalScaleFactor: 1
     - _ParallaxMap_TexelSize: 1000
     - _ParallaxMaxHeight: 100
-    - _ParallaxScale: 0.9
+    - _ParallaxScale: 0.5
     - _SpecPower: 10
     m_Colors:
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
