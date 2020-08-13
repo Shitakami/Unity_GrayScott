@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 82303511}
   - component: {fileID: 82303515}
   m_Layer: 0
-  m_Name: Plane (1)
+  m_Name: CRT_GrayScott
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82303510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.74, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_texture: {fileID: 8600000, guid: 40a920b24ce53ea489fe5659687bedc5, type: 2}
-  m_updateStep: 1
+  m_updateStep: 5
 --- !u!1 &526797507
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,31 +41,31 @@
             {
                 float2 uv = i.globalTexcoord;
 
-                // 1pxあたりの単位を計算する
+                // 1pxあたりの単位を計算
                 float du = 1.0 / _CustomRenderTextureWidth;
                 float dv = 1.0 / _CustomRenderTextureHeight;
                 float3 duv = float3(du, dv, 0) * _GridSize;
 
-                // 現在の位置のテクセルをフェッチ
+                // 現在のテクスチャの取得
                 float2 c = tex2D(_SelfTexture2D, uv);
                 float u = c.x;
                 float v = c.y;
 
-                float uvv = u*v*v;
-
+                // ラプラスの演算を行う
                 float2 laplacian = 
                     tex2D(_SelfTexture2D, uv - duv.zy).xy +
                     tex2D(_SelfTexture2D, uv + duv.zy).xy +
                     tex2D(_SelfTexture2D, uv - duv.xz).xy +
                     tex2D(_SelfTexture2D, uv + duv.xz) - 4.0*float2(u, v);
 
+                float uvv = u*v*v;
 
-                // laplacian /= (_GridSize*_GridSize);
-
+                // Gray-Scottモデルの反応拡散方程式
                 float dudt = _Du * laplacian.x - uvv + _F * (1.0 - u);
                 float dvdt = _Dv * laplacian.y + uvv - (_F + _K) * v;
 
                 return float4(saturate(u + dudt * _SimulateSpeed), saturate(v + dvdt * _SimulateSpeed), 0, 0);
+                
             }
             ENDCG
         }

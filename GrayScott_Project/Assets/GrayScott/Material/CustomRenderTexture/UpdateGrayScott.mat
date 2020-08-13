@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TestGrayScott
+  m_Name: UpdateGrayScott
   m_Shader: {fileID: 4800000, guid: 1468eeef420ea284c97aea07c5569334, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -28,9 +28,9 @@ Material:
     - _DeltaUV: 3
     - _Du: 0.2
     - _Dv: 0.1
-    - _F: 0.012
+    - _F: 0.04
     - _GridSize: 1
-    - _K: 0.05
+    - _K: 0.06
     - _S2: 0.199
-    - _SimulateSpeed: 1.1
+    - _SimulateSpeed: 1
     m_Colors: []

@@ -26,9 +26,10 @@
             {
                 float2 uv = i.texcoord;
 
-                // sample the texture
+                // ノイズテクスチャを取得
                 fixed4 col = tex2D(_MainTex, uv) * 0.1;
 
+                // テクスチャの中央の閾値を求める
                 fixed minThreadhold = 0.5 - _QuadWidth;
                 fixed maxThreadhold = 0.5 + _QuadWidth;
 
