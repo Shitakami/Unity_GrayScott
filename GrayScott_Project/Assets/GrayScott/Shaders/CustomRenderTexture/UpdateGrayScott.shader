@@ -28,11 +28,6 @@
 
             #include "UnityCustomRenderTexture.cginc"
 
-            half _S2;
-            half _Atten;
-            float _DeltaUV;
-            sampler2D _MainTex;
-
             float _F;
             float _K;
             float _SimulateSpeed;

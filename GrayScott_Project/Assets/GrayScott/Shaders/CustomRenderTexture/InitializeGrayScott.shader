@@ -13,12 +13,10 @@
             Name "Initialize"
             CGPROGRAM
 
-            #include "UnityCustomRenderTexture.cginc"
-
             #pragma vertex InitCustomRenderTextureVertexShader
             #pragma fragment frag
-            // make fog work
-
+            
+            #include "UnityCustomRenderTexture.cginc"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
