@@ -6,7 +6,6 @@
 		_MainTex("Main Texture", 2D) = "white" {}
 
 		_ParallaxScale("ParallaxScale", Float) = 1
-		_ParallaxMap_TexelSize("ParallaxMap Texel Size", Float) = 1000
 
 
 	}
@@ -30,15 +29,9 @@
 		uniform vector _TessFactor;
 		uniform float _LODFactor;
 		uniform sampler2D _MainTex;
-		uniform float _HeightOffSet;
 
 		uniform sampler2D _ParallaxMap;
 		uniform float _ParallaxScale;
-		uniform float _ParallaxMap_TexelSize;
-		uniform float _NormalScaleFactor;
-
-
-
 
 
 		struct appdata {
@@ -131,17 +124,6 @@
 
 			pos += parallaxHeight * normal;
 
-			// 凹凸のテクスチャから隣の高さを取得
-			float2 parallaxShiftX = { _ParallaxMap_TexelSize,  0 };
-			float2 parallaxShiftZ = { 0, _ParallaxMap_TexelSize };
-
-			float3 parallaxTexZ = tex2Dlod(_ParallaxMap, float4(uv.xy + parallaxShiftX, 0, 0)) * _ParallaxScale;
-			float3 parallaxTexz = tex2Dlod(_ParallaxMap, float4(uv.xy - parallaxShiftX, 0, 0)) * _ParallaxScale;
-			float3 parallaxTexx = tex2Dlod(_ParallaxMap, float4(uv.xy + parallaxShiftZ, 0, 0)) * _ParallaxScale;
-			float3 parallaxTexX = tex2Dlod(_ParallaxMap, float4(uv.xy - parallaxShiftZ, 0, 0)) * _ParallaxScale;
-
-
-
 			o.pos = UnityObjectToClipPos(float4(pos, 1));
 			o.uv = uv;
 			o.normal = UnityObjectToWorldNormal(normal);
@@ -154,10 +136,8 @@
 
 		float4 FS(f_input i) : SV_Target{
 
-
 			// テクスチャマップからカラー値をサンプリング
 			float4 tex = tex2D(_MainTex, i.uv);
-
 
 			return float4(tex.r, tex.r, tex.r, 1);
 		}

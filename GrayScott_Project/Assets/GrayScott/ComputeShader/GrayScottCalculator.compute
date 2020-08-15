@@ -1,6 +1,7 @@
 ﻿#pragma kernel InitializeTexture
 #pragma kernel UpdateGrayScotte
-
+#pragma kernel AddCircle
+#pragma kernel InitializeTextureWhite
 
 RWTexture2D<float2> Texture;
 Texture2D<float4> NoiseTexture;
@@ -55,3 +56,29 @@ void UpdateGrayScotte(uint3 id : SV_DispatchThreadID) {
 }
 
 
+// 以下遊び用
+[numthreads(8, 8, 1)]
+void InitializeTextureWhite(uint3 id : SV_DispatchThreadID) {
+
+	Texture[id.xy] = float2(1, 0);
+
+}
+
+
+float clickPositionX;
+float clickPositionY;
+float Range;
+
+[numthreads(8, 8, 1)]
+void AddCircle(uint3 id : SV_DispatchThreadID) {
+
+	float dx = clickPositionX - id.x;
+	float dy = clickPositionY - id.y;
+
+	float r = dx*dx + dy*dy;
+
+	if(r < Range*Range)
+		Texture[id.xy] = float2(0.5, 0.25) + NoiseTexture[id.xy].xy*0.1;
+
+
+}
